@@ -34,3 +34,10 @@ export const detailsShop = (params) => http("get", "/app/store/getOperation.json
 // export const detailsShop = (params) => http("get", "/app/store/getOperation.json", {shopId:params})
 
 
+// 头部banner详情
+export const detailsArticle = (id) => http("get", "/app/article/" + id)
+
+
+
+export const detailsShop = (params) => http("get", "/app/store/getOperation.json?" + params)
+

@@ -4,5 +4,5 @@ export default {
     meta: {
         tabFlag: true
     },
-    // component: () => import("@views/choose")
+    component: () => import("@views/choose/choose")
 }

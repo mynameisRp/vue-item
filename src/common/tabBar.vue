@@ -62,7 +62,7 @@ export default {
 #tabBar .icon{
     width: .56rem;
     height: .56rem;
-    background: url(../../public/images/tabBar.png) no-repeat;
+    background: url(~/images/tabBar.png) no-repeat;
     background-size: 3rem 1rem;
     margin-left: .6rem;
     background-position: 0 0;
