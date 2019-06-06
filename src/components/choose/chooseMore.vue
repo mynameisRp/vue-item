@@ -26,6 +26,7 @@ export default {
     created(){
        this.$nextTick(()=>{
            this.getMoreApi()
+           console.log(this)
        }) 
        
        
