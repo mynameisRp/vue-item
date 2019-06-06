@@ -16,7 +16,8 @@ module.exports = {
                 "@common": path.resolve(__dirname, "./src/common"),
                 "@components": path.resolve(__dirname, "./src/components"),
                 "@untils": path.resolve(__dirname, "./src/untils"),
-                "@views": path.resolve(__dirname, "./src/views")
+                "@views": path.resolve(__dirname, "./src/views"),
+                "~": path.resolve(__dirname, "./public")
             }
         }
     }
