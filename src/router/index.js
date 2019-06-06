@@ -8,7 +8,9 @@ import Search from "./search"
 import Mine from "./mine"
 import Shop from "./shop"
 import HomeDetails from "./homeDetails"
-
+import Producelist from './producelist/index'
+import Listtype from './list/index'
+import Info from '../components/produceinfo/index'
 
 Vue.use(Router)
 
@@ -26,6 +28,13 @@ export default new Router({
     Find,
     Mine,
     Shop,
-    HomeDetails
+    HomeDetails,
+    Producelist,
+    Listtype,
+    {
+      path:'/produceinfo',
+      name:'produceinfo',
+      component:Info
+    }
   ]
 })
