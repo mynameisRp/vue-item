@@ -21,3 +21,10 @@ export const cart = () => http("get", "/app/cart")
 //购物车建议
 export const cartSuggest = () => http("get", "app/product/suggest?offset=0&limit=20&source=CART")
 
+// 头部banner详情
+export const detailsArticle = (id) => http("get", "/app/article/" + id)
+
+
+
+export const detailsShop = (params) => http("get", "/app/store/getOperation.json?" + params)
+

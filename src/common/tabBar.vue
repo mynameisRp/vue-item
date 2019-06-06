@@ -54,7 +54,11 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
+#tabBar .mint-tabbar{
+    z-index: 9;
+}
+
 #tabBar .icon{
     width: .56rem;
     height: .56rem;
