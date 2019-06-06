@@ -25,19 +25,12 @@ export const cartSuggest = () => http("get", "/app/product/suggest?offset=0&limi
 // 头部banner详情
 export const detailsArticle = (id) => http("get", "/app/article/"+id)
 
-// shopId=1015693&id=
-// app/store/getOperation.json?shopId=1015693&id=
-// https: //m.thebeastshop.com/shop/story?name=shop-story&shopId=1015693
+
  
 export const detailsShop = (params) => http("get", "/app/store/getOperation.json?"+params)
 
-// export const detailsShop = (params) => http("get", "/app/store/getOperation.json", {shopId:params})
-
-
-// 头部banner详情
-export const detailsArticle = (id) => http("get", "/app/article/" + id)
 
 
 
-export const detailsShop = (params) => http("get", "/app/store/getOperation.json?" + params)
+
 
