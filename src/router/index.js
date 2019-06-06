@@ -7,6 +7,7 @@ import Find from "./find"
 import Search from "./search"
 import Mine from "./mine"
 import Shop from "./shop"
+import HomeDetails from "./homeDetails"
 
 
 Vue.use(Router)
@@ -24,6 +25,7 @@ export default new Router({
     Choose,
     Find,
     Mine,
-    Shop
+    Shop,
+    HomeDetails
   ]
 })

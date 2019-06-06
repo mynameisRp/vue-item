@@ -1,7 +1,7 @@
 <template>
   <div>
         <swiper ref="mySwiper">
-            <swiper-slide v-for="(item,index) in headerBanner" :key="index" v-show="item.image.src">
+            <swiper-slide v-for="(item,index) in headerBanner" :key="index" v-show="item.image.src"  @click.native="skipDetails(item.link)">
                 <img :src="item.image.src">
                 <div class="img-index"><span>{{item.sequence}}</span>/<span>5</span></div>
             </swiper-slide>
@@ -26,7 +26,16 @@ export default {
     methods: {
         ...Vuex.mapActions({
             headerbannerList: "Home/headerBannerList"
-        })
+        }),
+        skipDetails(val){
+            this.$router.push({
+                path: "/homeDetails",
+                query: {
+                    value: val.value,
+                    type: val.type
+                }
+            })   
+        }
     },
     computed: {
         ...Vuex.mapState({
