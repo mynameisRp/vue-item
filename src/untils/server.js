@@ -1,7 +1,9 @@
 import axios from "axios";
 
+
 export const server = axios.create({
   timeout: 5000,
+  baseURL: "/Api",
   withCredentials: true
 });
 

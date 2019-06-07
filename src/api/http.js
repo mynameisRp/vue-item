@@ -5,7 +5,7 @@ export const IndexData = () => http("get", "/app/index/getNewIndex")
 
 
 // 新产品数据接口
-export const newProduct = (params) => http("post", "app/article/newProduct", params)
+export const newProduct = (params) => http("post", "/app/article/newProduct", params)
 
 
 // 搜索建议接口
@@ -26,11 +26,17 @@ export const cartSuggest = () => http("get", "/app/product/suggest?offset=0&limi
 export const detailsArticle = (id) => http("get", "/app/article/"+id)
 
 
- 
+//详情商店
 export const detailsShop = (params) => http("get", "/app/store/getOperation.json?"+params)
 
 
+// 商店搜寻
+export const shopCityAndBrand = () => http("get", "/appadmin/store/search")
 
+// https: //api.thebeastshop.com/appadmin/store/search?couponId=&cityId=&brandId=&lat=&lng=
+
+//城市列表
+export const CityData = () => http("get", "/appadmin/store/cityAndBrand")
 
 
 

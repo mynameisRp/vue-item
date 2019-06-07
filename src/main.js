@@ -8,8 +8,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'mint-ui/lib/style.css'
 import 'swiper/dist/css/swiper.css'
 
-
 Vue.config.productionTip = false
+
 Vue.use(VueAwesomeSwiper);
 Vue.use(MintUI);
 new Vue({

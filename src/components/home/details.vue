@@ -31,6 +31,6 @@ export default {
 
 <style>
 .container{
-    padding: 2rem 0 1rem;
+    padding: 1rem 0 1rem;
 }
 </style>

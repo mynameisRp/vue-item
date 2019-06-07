@@ -1,16 +1,18 @@
 <template>
     <div id="home-details">
-        <div class="details-header"></div>
+        <HeaderCommon/>
         <Details/>
     </div>
 </template>
 
 <script>
 import Details from "@components/home/details"
+import HeaderCommon from "@common/headerCommon"
 export default {
     name: "HomeDetails",
     components: {
-        Details
+        Details,
+        HeaderCommon
     }
 }
 </script>
