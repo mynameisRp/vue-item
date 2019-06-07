@@ -31,6 +31,7 @@ export default {
          }
          commit("mutationsImgList", [imgListArr, imgListBottom])
     },
+    // 中部logo区域
     async logoListData({commit}){
         let data = await IndexData();
         let dataList = data.data.modules;
