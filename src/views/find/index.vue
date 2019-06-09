@@ -2,7 +2,9 @@
   <div id="find">
     <Goods/>
     <Findtop/>
-    <findcontent/>
+   
+    <TabBar/>
+    
   </div>
 </template>
 
@@ -10,12 +12,14 @@
 import Goods from '@components/find/goods';
 import Findtop from '@components/find/findtop';
 import findcontent from '@components/find/findcontent';
+import TabBar from '@common/tabBar';
 export default {
     name:'findpage',
     components:{
       Goods,
       Findtop,
-      findcontent
+      findcontent,
+      TabBar
       }
    
 }

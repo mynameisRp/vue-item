@@ -1,5 +1,6 @@
 <template>
   <div id="findlist" style="display:block;">
+  
     <div id="list-left">   
         <div class="item" v-for="(ele,index) in mygoodsList" :key="index">
           <div class="video-image">          
@@ -61,7 +62,7 @@ export default {
      
     }) 
   },
-  created() {
+  mounted(){
     this.getlist();
     console.log(this)
   },
@@ -77,7 +78,7 @@ export default {
 <style scoped>
  
   #findlist{
-    padding:0 .32rem 0;
+    padding:0.88rem .32rem 0;
     height:14.11rem;
     overflow:auto;
     background:white;

@@ -1,13 +1,17 @@
 <template>
     <div id="findtop">       
-        <ul class="myheader">           
-            <router-link to="findcontent" tag="li">随便晒单</router-link>        
-            <router-link to="coverstory" tag="li">封面故事</router-link>         
+        <ul class="myheader"> 
+            <keep-alive>
+                <router-link to="findcontent" tag="li">随便晒单</router-link>        
+            </keep-alive>  
+            <keep-alive>
+                <router-link to="coverstory" tag="li">封面故事</router-link>
+            </keep-alive>            
         </ul>  
         <router-view>
            
         </router-view>  
-        
+       
     </div>
 </template>
 
@@ -31,15 +35,16 @@ export default{
 
 <style scoped>
     #findtop{ 
-        position: fixed; 
-        top: 0;
-        left: 0; 
-        background:white;
+       
+       
        
          
     }   
     .myheader{ 
-       
+        background:white;
+        position: fixed; 
+        top: 0;
+        left: 0; 
         width: 7.5rem;
         height:.88rem; 
         display:flex;

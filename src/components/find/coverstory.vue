@@ -30,14 +30,14 @@ import covertitle from '@components/find/covertitle'
         },
         computed: {
             ...Vuex.mapState({
-                storyList:state=>state.findpage.storyList,
-                num:state=>state.findpage.num
+                storyList:state=>state.find.storyList,
+                num:state=>state.find.num
             })
         },
         methods: {
             ...Vuex.mapActions({
-                storygetList:"findpage/storygetList",
-                reloadadd:"findpage/reloadadd"
+                storygetList:"find/storygetList",
+                reloadadd:"find/reloadadd"
             })
            
               
@@ -48,8 +48,7 @@ import covertitle from '@components/find/covertitle'
 
 <style scoped>
     #covers-story{
-        width:100%;
-        height:100%;
+       
         
     }
     ::webkit-scrollbar{
@@ -60,26 +59,22 @@ import covertitle from '@components/find/covertitle'
     .storylist{
         width:100%;
         height:1410px;
-        padding:.5rem 0 ;  
+        padding:1.57rem 0 ;  
         overflow:auto;
 
     }
     .items{
         width:3.44rem;
-        height:5.8rem;
+        height:6.28rem;
         float:left;
         margin-left:.2rem;
         
     }
     .img-box{
         margin-bottom: .22rem;
-        width:100%;
-        height:100%;
-    }
-     .img-box>img{
-
-       position:relative;
-       
+        width:3.44rem;
+        height:5.01rem;
+        
     }
     .info-box>.title{
         font-weight: 700;
@@ -87,7 +82,9 @@ import covertitle from '@components/find/covertitle'
         font-size:#2b2b2b;
         margin-bottom: .38rem;
     }
-    .img-box .img {
-        position:relative;
+    .img-box img {
+       
+        width:3.44rem;
+        height:5.01rem;
     }
 </style>

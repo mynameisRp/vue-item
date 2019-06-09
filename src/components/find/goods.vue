@@ -25,7 +25,7 @@ export default {
 <style scoped>
     .header{
     width: 100%;
-    position: relative;
+    position: fixed;
     z-index: 6;
 }
 

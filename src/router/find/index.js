@@ -3,13 +3,14 @@
 export default{
   path:"/find",
   name:"find",
+  redirect:"/findcontent",
   component:()=>import("@views/find"),
   meta:{
     tabBarFlag:true
   },
   children:[
     {
-      path:"findcontent",
+      path:"/findcontent",
     
       component:()=>import("@components/find/findcontent"),
       meta:{
@@ -17,7 +18,7 @@ export default{
         }
     },
     {
-      path:"coverstory",
+      path:"/coverstory",
       
       component:()=>import("@components/find/coverstory"),
       meta:{
