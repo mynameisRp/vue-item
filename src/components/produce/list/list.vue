@@ -6,16 +6,13 @@
                 
                     
                     
-                    <li v-for="(item, index) in list" :key="index"
-                      :class="index==listIndex?active:''"
-                      class='swiper-slide'
-                      @click='listgetOthers(item,index)'
-                      >{{item.title}}</li>
-                  
-                       
-                      
-                  
-                             
+                        <li v-for="(item, index) in list" :key="index"
+                        :class="index==listIndex?active:''"
+                        class='swiper-slide'
+                        @click='listgetOthers(item,index)'
+                        >{{item.title}}</li>
+                    
+            
             </ul>
           
         </div>
@@ -31,15 +28,17 @@
           overflow: hidden;
         }
         #list ul {
-          width:max-content;
-          overflow:auto
+          padding:0 0.3rem;
+          overflow:auto;
+          width:100%
         }
         #list ul li {
           float: left;
           list-style-type:none; 
           font-size:0.28rem;
           font-weight: 500;
-          line-height:0.4rem
+          line-height:0.4rem;
+          margin:0 0.1rem
         }
         .clearfix:after {
                 content: ".";
@@ -72,7 +71,9 @@
             width: 100vw;
             overflow: hidden;
           }
-       
+        .swiper-slide {
+          width:15%
+        }
 </style>
 
 <script>
@@ -130,7 +131,7 @@ export default {
          var mySwiper = new Swiper('.swiper-container',{
             freeMode : true,
             freeModeMomentum : false,
-            slidersPerView:5
+            
 
             })
         }
