@@ -23,11 +23,12 @@ import chooseMore from './chooseMore'
 export default {
      computed: {
       ...Vuex.mapState({
-        lista:state=>state.choose.chooseList.modules,
+        lista:state=>state.choose.chooseList,
         routerIndex:state=>state.choose.routerIndex
       })
     },
     created(){
+      console.log(this)
        this.$nextTick(()=>{
          this.getChooseIndex()
        })

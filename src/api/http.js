@@ -33,7 +33,6 @@ export const detailsShop = (params) => http("get", "/app/store/getOperation.json
 // 商店搜寻
 export const shopCityAndBrand = () => http("get", "/appadmin/store/search")
 
-// https: //api.thebeastshop.com/appadmin/store/search?couponId=&cityId=&brandId=&lat=&lng=
 
 //城市列表
 export const CityData = () => http("get", "/appadmin/store/cityAndBrand")

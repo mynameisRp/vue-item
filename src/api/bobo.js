@@ -1,7 +1,7 @@
 import {get} from '@untils/get'
 
 //choose
-export const getChooseIndexApi = () => get('app/index/classifyDataV2')
+export const getChooseIndexApi = () => get('/app/index/classifyDataV2')
 
 export const getMoreApi = () => get('app/index/classifyDataV2')
 
