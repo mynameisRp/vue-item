@@ -5,7 +5,7 @@
         </div>
         <div class="cart" @click="skipCart">
             <img :src="cart">
-            <i class="cartNum">2</i>
+            <i class="cartNum" v-show="num"></i>
         </div>
     </div>
 </template>
@@ -15,6 +15,7 @@ export default {
     name: "Header",
     data(){
         return{
+            num: "",
             search: "https://img.thebeastshop.com/images/menu-tab/menu-search.png",
             cart: "https://img.thebeastshop.com/app/4.0/icon/icon-cart-sm.png"
         }

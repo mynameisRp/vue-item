@@ -2,7 +2,7 @@
     <div class="newProducts">
         <h2>NEW ARRIVAL</h2>
         <swiper ref="mySwiper">
-            <swiper-slide v-for="(item, index) in newProImgList" :key="index" v-show="item.featureImage" @click.native="skipNewProDetails">
+            <swiper-slide v-for="(item, index) in newProImgList" :key="index" v-show="item.featureImage" @click.native="skipNewProDetails(item.id)">
                 <img :src="item.featureImage">
             </swiper-slide>
         </swiper>
@@ -26,26 +26,22 @@ export default {
         ...Vuex.mapActions({
             newProList: "Home/newProList"
         }),
-        skipNewProDetails(){
-            this.$router.push("/produceinfo")
+        skipNewProDetails(id){
+            this.$router.push({
+                name: 'produceinfo',
+                params:{id:id}
+            })
         }
     },
     computed:{
         ...Vuex.mapState({
             newProImgList: state=>state.Home.newProImgList
-        }),
-        // swiper() {
-        //     return this.$refs.mySwiper.swiper
-        // }
+        })
     }
 }
 </script>
 
 <style>
-/* .newProducts{
-    width: 100%;
-    overflow: hidden;
-} */
 
 .newProducts h2{
     text-align: center;
