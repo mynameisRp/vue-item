@@ -3,7 +3,7 @@
         <covertitle/>
         <div class="storylist"  style="display:block;">
             <div class="items"  v-for="(ele,index) in storyList" :key="index">               
-                <div class="img-box" style="height: 501.682px;">
+                <div class="img-box" >
                     <img width="344" height="463.07692307692304" style="top: 38.6047px;" :src="ele.titleImage.src">
                 </div> 
                 <div class="info-box">
@@ -65,15 +65,15 @@ import covertitle from '@components/find/covertitle'
     }
     .items{
         width:3.44rem;
-        height:6.28rem;
+        height:6rem;
         float:left;
         margin-left:.2rem;
         
     }
     .img-box{
         margin-bottom: .22rem;
-        width:3.44rem;
-        height:5.01rem;
+       
+        
         
     }
     .info-box>.title{
