@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import Home from './home'
 import Search from './search'
 import Cart from "./cart"
+import HomeDetails from "./homeDetails"
+import Shop from "./shop"
 import choose from './choose/index'
 import producelist from './producelist/index'
 import list from './list/index'
@@ -14,6 +16,8 @@ export default new Vuex.Store({
     Home,
     Search,
     Cart,
+    HomeDetails,
+    Shop,
     choose,
     producelist,
     list,

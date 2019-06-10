@@ -4,5 +4,5 @@ export default {
     meta: {
         tabFlag: true
     },
-    // component: () => import("@views/cart")
+    component: () => import("@views/shop")
 }

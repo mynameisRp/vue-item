@@ -7,6 +7,7 @@ import Find from "./find"
 import Search from "./search"
 import Mine from "./mine"
 import Shop from "./shop"
+import HomeDetails from "./homeDetails"
 import Producelist from './producelist/index'
 import Listtype from './list/index'
 import Info from '../components/produceinfo/index'
@@ -27,6 +28,7 @@ export default new Router({
     Find,
     Mine,
     Shop,
+    HomeDetails,
     Producelist,
     Listtype,
     {

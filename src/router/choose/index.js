@@ -1,10 +1,12 @@
 import Choose from "../../components/choose/choose"
 export default {
-    path:'/choose',
-    component:Choose,
-    meta:{
-        tabFlag:true
-    }
+    path: "/choose",
+    name: "Choose",
+    meta: {
+        tabFlag: true
+    },
+    component: Choose
+   
     
     // children:[
     //     {

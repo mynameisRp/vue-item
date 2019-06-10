@@ -2,9 +2,12 @@ const path = require("path");
 module.exports = {
     devServer: {
         proxy: {
-            "/app": {
+            "/Api": {
                 target: "https://api.thebeastshop.com",
-                changeOrgin: true 
+                changeOrgin: true, //设置是否跨域
+                pathRewrite: {
+                    '^/Api': '' //重写接口
+                }
             }
         }
     },
@@ -16,7 +19,9 @@ module.exports = {
                 "@common": path.resolve(__dirname, "./src/common"),
                 "@components": path.resolve(__dirname, "./src/components"),
                 "@untils": path.resolve(__dirname, "./src/untils"),
-                "@views": path.resolve(__dirname, "./src/views")
+                "@views": path.resolve(__dirname, "./src/views"),
+                "~": path.resolve(__dirname, "./public"),
+                "@assets": path.resolve(__dirname, "./src/assets")
             }
         }
     }
