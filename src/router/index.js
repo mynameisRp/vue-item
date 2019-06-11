@@ -36,7 +36,6 @@ export default new Router({
       path:'/produceinfo',
       name:'produceinfo',
       component:Info
-    }
-    
+    } 
   ]
 })
