@@ -1,5 +1,6 @@
 export default {
     cityData: [],
     tabData: [],
-    shopSelectList: []
+    shopSelectList: [],
+    cityActiveIndex:0
 }

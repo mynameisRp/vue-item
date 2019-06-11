@@ -79,14 +79,8 @@ export default {
     },
     created(){
       this.$nextTick(()=>{
-            var id = ""
-            if(this.$route.params.id){
-                id = this.$route.params.id
-                sessionStorage.setItem("produceId", JSON.stringify(this.$route.params.id))
-            } else{
-             id =  JSON.parse(sessionStorage.getItem('produceId'))
-             }
-              var url2 = 'app/product/'+id +'/details?legacy=false'
+            
+              var url2 = 'app/product/'+this.$route.query.id +'/details?legacy=false'
               get(url2).then((res)=>{
             
             this.getproduceContent(res.data.details)

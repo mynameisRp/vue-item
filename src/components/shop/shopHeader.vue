@@ -12,6 +12,15 @@
                 </li>
                 <li class="tab-list" v-for="(item, index) in tabData" :key="index"><p>{{item.name}}</p></li>
             </ul>
+            <div id = 'map_area' v-show='map_ul_display'>
+                <ul ref='map_ul'>
+                    <li 
+                    v-for="(item, index) in cityData" :key="index"
+                    :class="index==cityIndex?active:''"
+                    @click="changeIndex(item,index)"
+                    >{{item.cityName}}</li>
+                </ul>
+            </div>
         </div>
     </div> 
 </template>
@@ -26,7 +35,8 @@ export default {
     computed: {
         ...Vuex.mapState({
                 cityData: state=>state.Shop.cityData,
-                tabData: state=>state.Shop.tabData
+                tabData: state=>state.Shop.tabData,
+                cityIndex:state=>state.Shop.cityActiveIndex
         })
     },
     methods:{
@@ -34,12 +44,20 @@ export default {
             cityList: "Shop/cityList"
         }),
         showCityList(){
-            console.log(1)
+            this.map_ul_display = !this.map_ul_display
+        },
+        ...Vuex.mapMutations({
+            changCityIndex:'Shop/changCityIndex'
+        }),
+        changeIndex(item,index){
+            this.changCityIndex(index)
         }
     },
     data(){
         return {
-            city: "全国"
+            city: "全国",
+            active:'active',
+            map_ul_display:false
         }
     }
 }
@@ -69,6 +87,7 @@ export default {
 .tab-wrap{
     margin: .4rem 0;
     padding: 0 .2rem;
+    position:relative
 }
 
 .tab-wrap .tab{
@@ -120,5 +139,22 @@ export default {
     background: #000;
     color:#fff;
     line-height: .8rem;
+}
+#map_area {
+    padding:0.2667rem 0.1333rem;
+    position:absolute;
+    top:0;
+    width:100%;
+    background:#fff;
+}
+#map_area li {
+    float:left;
+    font-size:.4rem;
+    color:#000;
+    font-weight:700;
+    margin:0.2rem 0.25rem
+}
+#map_area .active {
+    color:red
 }
 </style>
