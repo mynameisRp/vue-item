@@ -14,9 +14,10 @@
 </template>
 
 <script>
+
 import Vuex from 'vuex'
     export default{ 
-        name:"basthome",
+        name:"Basthome",
         
         created () {
             this.homegetlist();
@@ -25,13 +26,13 @@ import Vuex from 'vuex'
        
         computed: {
             ...Vuex.mapState({
-                homeList:state=>state.findpage.homeList
+                homeList:state=>state.find.homeList
             })
         },
         methods: {
             ...Vuex.mapActions({
-                homegetlist:"findpage/homegetlist",
-                reloadadd:"findpage/reloadadd"
+                homegetlist:"find/homegetlist",
+                reloadadd:"find/reloadadd"
             })
             
               

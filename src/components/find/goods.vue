@@ -15,7 +15,6 @@ export default {
     name: "Header",
     data(){
         return{
-           
             cart: "https://img.thebeastshop.com/app/4.0/icon/icon-cart-sm.png"
         }
     }

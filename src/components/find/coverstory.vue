@@ -19,12 +19,10 @@ import Vuex from 'vuex'
 import covertitle from '@components/find/covertitle'
     export default{ 
         name:"coverstory",
-        
         mounted() {
             this.storygetList();
            
         },
-        
         components:{
             covertitle
         },
@@ -39,18 +37,11 @@ import covertitle from '@components/find/covertitle'
                 storygetList:"find/storygetList",
                 reloadadd:"find/reloadadd"
             })
-           
-              
         }
-        
     }
 </script>
 
 <style scoped>
-    #covers-story{
-       
-        
-    }
     ::webkit-scrollbar{
         width:0;
         height:0;

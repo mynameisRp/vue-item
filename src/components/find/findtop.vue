@@ -33,13 +33,7 @@ export default{
 }
 </script>
 
-<style scoped>
-    #findtop{ 
-       
-       
-       
-         
-    }   
+<style scoped>  
     .myheader{ 
         background:white;
         position: fixed; 

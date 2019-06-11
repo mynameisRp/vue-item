@@ -11,6 +11,7 @@ import HomeDetails from "./homeDetails"
 import Producelist from './producelist/index'
 import Listtype from './list/index'
 import Info from '../components/produceinfo/index'
+import Find from './find'
 
 
 Vue.use(Router)
@@ -26,18 +27,17 @@ export default new Router({
     Search,
     Cart,
     Choose,
-    find,
     Mine,
     Shop,
     HomeDetails,
     Producelist,
     Listtype,
+    Find,
     {
       path:'/produceinfo',
       name:'produceinfo',
       component:Info
     },
-    Shop
     
   ]
 })

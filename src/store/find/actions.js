@@ -4,7 +4,6 @@ export default {
 //    晒单内容
     async getlist({commit}){
         let data = await FindData({limit:20,offset:0});
-        console.log(data.data)
         commit('mutationsgetlist', data.data.items)    
     },
         

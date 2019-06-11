@@ -26,13 +26,13 @@ import Vuex from 'vuex'
         ,
         computed: {
             ...Vuex.mapState({
-                storyList:state=>state.findpage.storyList
+                storyList:state=>state.find.storyList
             })
         },
         methods: {
             ...Vuex.mapActions({
-                storygetList:"findpage/storygetList",
-                reloadadd:"findpage/reloadadd"
+                storygetList:"find/storygetList",
+                reloadadd:"find/reloadadd"
             })
             
               

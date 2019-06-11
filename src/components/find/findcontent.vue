@@ -64,7 +64,6 @@ export default {
   },
   mounted(){
     this.getlist();
-    console.log(this)
   },
   methods: {
     ...Vuex.mapActions({
