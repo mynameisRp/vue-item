@@ -32,9 +32,7 @@ import Vuex from 'vuex'
             ...Vuex.mapActions({
                 storygetList:"find/storygetList",
                 reloadadd:"find/reloadadd"
-            })
-            
-              
+            })   
         }
     }
 </script>
