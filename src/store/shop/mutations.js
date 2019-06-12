@@ -5,5 +5,9 @@ export default {
     mutationsShopHeader(state, params){
         state.cityData = params.cities;
         state.tabData = params.brands;
+        console.log(state.cityData)
+    },
+    changCityIndex(state,params){
+        state.cityActiveIndex = params
     }
 }

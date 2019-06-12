@@ -84,7 +84,10 @@ export default {
         }),
         ...Vuex.mapMutations({
             getMutationslistData:'list/getlistData'
-        })
+        }),
+        getproduceinfo(){
+            
+        }
     },
     
     filters:{

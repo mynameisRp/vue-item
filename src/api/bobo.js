@@ -18,11 +18,8 @@ export const getOtherFromProduceOther =()=>get('app/search/product?limit=20&offs
 
 
 //producelist
-export const getlistDataFromList = (params)=>{
-    get('app/search/product?limit=20&offset=0&listId='
-    +params.listId+'&title='+params.title+'&sortField=SYNTHESIS&sortOrder=DESC',params)
-}
-
+export const getlistDataFromList = (params)=>get('app/search/product?limit=20&offset=0&listId='+params.listId+'&title='+params.title+'&sortField=SYNTHESIS&sortOrder=DESC',params)
+//app/search/product?limit=20&offset=0&listId=618&title=FOR%20BABY&sortField=SYNTHESIS&sortOrder=DESC
 
 //produceinfo
 
@@ -30,3 +27,9 @@ export const getlistDataFromList = (params)=>{
 export const getproduceFromInfo = (params) => get('app/product/'+params,params)
 
 export const getproducemoreFromInfo = (params) => get('app/product/'+params +'/details?legacy=false',params)
+
+
+//门店
+
+
+export const getCityBrand = () => get('appadmin/store/cityAndBrand')

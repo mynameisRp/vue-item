@@ -1,10 +1,10 @@
 <template>
     <div>
          <div id = 'top'>
-            <img src="../../../../public/menu-menu.png" alt="">
+            <img src="@@/menu-menu.png" alt="">
             <div>
-              <img src="../../../../public/下载.png" alt="">
-              <img src="../../../../public/icon-cart-sm.png" alt="">
+              <img src="@@/down.png" alt="">
+              <img src="@@/icon-cart-sm.png" alt="">
             </div>
         </div>
     </div>

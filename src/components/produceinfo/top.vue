@@ -76,16 +76,10 @@ export default {
   created() {
     console.log(this.$route.params)
     this.$nextTick(()=>{
-      if(this.$route.params.id){
-        var url = 'app/product/'+this.$route.params.id
+     var url = 'app/product/'+this.$route.query.id
           get(url).then((res)=>{
               this.getproduceMutations(res.data)
           })
-          // this.getproduce(this.$route.params.id)
-          sessionStorage.setItem("produceId", JSON.stringify(this.$route.params.id))
-        }else{
-          this.getproduce(JSON.parse(sessionStorage.getItem('produceId')))
-        }
     })
   },
   

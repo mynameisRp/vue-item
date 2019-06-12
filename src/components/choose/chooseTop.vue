@@ -3,11 +3,11 @@
         
         <div id = "top">
             <div id = "search_input">
-                <img src="../../../public/下载.png" alt="">
+                <img src="@@/down.png" alt="">
                 <input type="text" class="s_input">
             </div>
             <div>
-                <img src="../../../public/icon-cart-sm.png" alt="">
+                <img src="@@/icon-cart-sm.png" alt="">
             </div>
         </div>
     </div>

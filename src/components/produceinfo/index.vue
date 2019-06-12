@@ -18,6 +18,7 @@ import Top from './top'
 import Bottom from './bottom'
 import Producetitle from './producetitle'
 import Info from './info'
+import Vuex from 'vuex'
 export default {
     components:{
         
@@ -26,6 +27,14 @@ export default {
         Info,
         Bottom
         
-    }
+    },
+    beforeDestroy() {
+        this.deleteProduceAll()
+    },
+    methods: {
+        ...Vuex.mapMutations({
+            deleteProduceAll:'produceinfo/deleteProduceAll'
+        })
+    },
 }
 </script>

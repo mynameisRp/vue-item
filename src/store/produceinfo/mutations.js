@@ -4,5 +4,8 @@ export default{
     },
     getproduceContent(state,params){
         state.produceContent  = params
+    },
+    deleteProduceAll(state){
+        state.produce = state.produceContent = []
     }
 }

@@ -86,7 +86,7 @@ export default {
           console.log(item)
           this.$router.push({
             name:'produceinfo',
-            params:{id:item.id}
+            query:{id:item.id}
           })
         }
     },

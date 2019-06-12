@@ -21,7 +21,8 @@ module.exports = {
                 "@untils": path.resolve(__dirname, "./src/untils"),
                 "@views": path.resolve(__dirname, "./src/views"),
                 "~": path.resolve(__dirname, "./public"),
-                "@assets": path.resolve(__dirname, "./src/assets")
+                "@assets": path.resolve(__dirname, "./src/assets"),
+                "@@":path.resolve(__dirname, "./src/../public"),
             }
         }
     }

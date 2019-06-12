@@ -1,9 +1,15 @@
-import {getlistDataFromList} from '@api/bobo'
+import {getlistDataFromList,getMoreApi} from '@api/bobo'
 export default {
 
     async getlistData({commit},params){
-        let data = await getlistDataFromList(params)
-            commit('getlistData',res.data.list.items)
         
-    }
+        let res = await getlistDataFromList(params)
+        let res1 = 0
+        console.log(res.data.list.items)
+        commit('getlistData',res.data.list.items)
+        
+        // console.log(await getlistDataFromList(params))
+        
+    },
+    
 }
