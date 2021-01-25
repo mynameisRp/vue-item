@@ -1,6 +1,6 @@
 <template>
     <swiper ref="mySwiper">
-        <swiper-slide v-for="(item, index) in delayList" :key="index"  v-show="item.image.src">
+        <swiper-slide v-for="(item, index) in delayList" :key="index"  v-show="item.image.src" @click.native="skipDelatDetails(item.link)">
             <img :src="item.image.src" >
         </swiper-slide>
     </swiper>
@@ -22,7 +22,16 @@ export default {
     methods: {
         ...Vuex.mapActions({
             delayData: "Home/delayData"
-        })
+        }),
+        skipDelatDetails(val){
+             this.$router.push({
+                path: "homeDetails",
+                query: {
+                    value: val.value,
+                    type: val.type
+                }
+            })
+        }
     },
     computed: {
         ...Vuex.mapState({

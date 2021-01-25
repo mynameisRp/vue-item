@@ -1,7 +1,10 @@
 <template>
-    <div id = "app">
-        <div v-for="(item, index) in list" :key="index">
-            <img :src='item.image.src' />
+    <div id = "app" v-if='items[routerIndex]'>
+        <div 
+        v-for="(item, index) in items[routerIndex].data.subCategory" :key="index" @click="jumpTo(item)"
+        v-if='!item.hideImage'
+        >
+            <img :src="item.image.src" />
             <span>{{item.title}}</span>
         </div>
     </div>
@@ -10,37 +13,85 @@
 <script>
 import Vuex from 'vuex'
 
+
+
 export default {
-    computed: {
-        ...Vuex.mapState({
-            routerIndex:state=>state.choose.routerIndex,
-            listArr:state=>state.choose.chooseList
-        })
+     computed: {
+      ...Vuex.mapState({
+        routerIndex:state=>state.choose.routerIndex,
+        items:state=>state.choose.chooseMoreList,
+        chooselist:state=>state.choose.chooseList
+      })
     },
     created(){
-        
-        console.log(this.routerIndex)
-        this.list = JSON.parse(localStorage.getItem('666'))[this.routerIndex].data.subCategory 
-        
+       this.$nextTick(()=>{
+           this.getMoreApi()
+           console.log(this)
+       }) 
+       
+       
     },
-    computed: {
-        ...Vuex.mapState({
-            routerIndex:state=>state.choose.routerIndex
+
+    
+  
+    methods: {
+        ...Vuex.mapActions({
+            getMoreApi:'choose/getMoreApi',
+           
+        }),
+        ...Vuex.mapMutations({
+           getRouteIndex:'choose/getRouteIndex',
+           getChooseIndexList:'choose/getChooseIndexList'
         })
+        ,
+        getRouteindex(index,e){
+          var parent = e.target.parentNode ;
+          this.getRouteIndex(index)
+        },
+        jumpTo(item){
+            // console.log(item.title)
+            
+
+            if(item.link.type == 'all' || item.link.type == 'category'){
+                this.$router.push({name:'producelist',params:{
+                    'cateTitle':this.items[this.routerIndex].data.title,
+                    'subTitle':item.title,
+                    'linkType':item.link.type,
+                    'value':item.link.value
+                    }})
+            }else if(item.link.type == 'list'){
+                this.$router.push({name:'list',params:{title:item.title,listId:item.link.value}})
+            }
+
+        }
+           
     },
-   data(){
-       return{
-           list:[],
-           index:0
-       }
-   },
-   watch:{
-       "routerIndex"(){
-           this.list = JSON.parse(localStorage.getItem('666'))[this.routerIndex].data.subCategory
-           console.log(this.routerIndex)
-           console.log(this.list)
-       }
-   }
+   
+    data(){
+      return {
+          chooseList:[],
+          listIndex:0,
+          active:'active',
+          
+      }
+    },
+    filters:{
+        getItemList(val){
+            var arr = []
+            for(var i = 0 ; i < val.length ; i++){
+                if(!val[i].hideImage){
+                    arr.push(val[i])
+                }
+            }
+            return arr
+        }
+    },
+    watch: {
+        'routerIndex'(newV){
+            // this.items = this.items[newV].data.subCategory
+            console.log(this.items)
+        }
+    },
 }
 </script>
 

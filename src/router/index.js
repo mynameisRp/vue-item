@@ -3,10 +3,15 @@ import Router from 'vue-router'
 import Cart from "./cart"
 import Home from "./home"
 import Choose from "./choose"
-import Find from "./find"
+import find from "./find"
 import Search from "./search"
 import Mine from "./mine"
 import Shop from "./shop"
+import HomeDetails from "./homeDetails"
+import Producelist from './producelist/index'
+import Listtype from './list/index'
+import Info from '../components/produceinfo/index'
+import Find from './find'
 
 
 Vue.use(Router)
@@ -22,8 +27,17 @@ export default new Router({
     Search,
     Cart,
     Choose,
-    Find,
     Mine,
-    Shop
+    Shop,
+    HomeDetails,
+    Producelist,
+    Listtype,
+    Find,
+    {
+      path:'/produceinfo',
+      name:'produceinfo',
+      component:Info
+    },
+    
   ]
 })

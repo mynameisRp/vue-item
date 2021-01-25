@@ -1,8 +1,18 @@
+import Choose from "../../components/choose/choose"
 export default {
     path: "/choose",
     name: "Choose",
     meta: {
         tabFlag: true
     },
-    // component: () => import("@views/cart")
+    component: Choose
+   
+    
+    // children:[
+    //     {
+    //         path:'/choose/more',
+    //         component:chooseMore
+    //     }
+    // ]
+
 }

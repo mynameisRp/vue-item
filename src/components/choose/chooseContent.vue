@@ -4,8 +4,8 @@
             <div id = "content_left">
                 <ul>
                     
-                    <li v-for="(item, index) in list" :key="index" :ref='index'
-                   @click="getRouteindex(index,$event)"><span>{{item.data.title}}</span></li>
+                    <li v-for="(item, index) in lista" :key="index" :class="index==routerIndex?active:''"
+                   @click="getRouteindex(index,$event)"><span v-if="item.data">{{item.data.title}}</span></li>
                 </ul>
             </div>
             <div id = "content_right">
@@ -21,14 +21,22 @@ import  Vuex from 'vuex'
 import chooseMore from './chooseMore'
 
 export default {
-    created(){
-      this.getChooseIndex()
-      
+     computed: {
+      ...Vuex.mapState({
+        lista:state=>state.choose.chooseList,
+        routerIndex:state=>state.choose.routerIndex
+      })
     },
-
-    mounted() {
-      console.log(this.list)
-    }, 
+    created(){
+      console.log(this)
+       this.$nextTick(()=>{
+         this.getChooseIndex()
+       })
+       
+       
+    },
+   
+   
   
     methods: {
         ...Vuex.mapActions({
@@ -45,27 +53,17 @@ export default {
         }
            
     },
-    computed: {
-      ...Vuex.mapState({
-        list:state=>state.choose.chooseList,
-        routerIndex:state=>state.choose.routerIndex
-      })
-    },
+   
     data(){
       return {
-          chooseList:{},
-          b:123
+          chooseList:[],
+          b:123,
+          active:'active',
+          flag:true
       }
     },
     components:{
       chooseMore
-    },
-    watch:{
-        'routerIndex'(newV,old){
-          console.log(this.$refs[this.routerIndex])
-          this.$refs[this.routerIndex][0].className = 'active',
-          this.$refs[old][0].className = ''
-        }
     }
 }
 </script>
